@@ -19,6 +19,9 @@ routes.post('/signin', controllers.authController.signin);
  */
 
 routes.use(authMiddleWare);
-routes.get('/tweets', (req, res) => res.send('OK'));
+routes.get('/tweets', (req, res) => {
+  console.log(req.userId);
+  res.send('ok');
+});
 
 module.exports = routes;
