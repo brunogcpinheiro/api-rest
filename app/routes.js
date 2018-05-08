@@ -23,7 +23,15 @@ routes.use(authMiddleWare);
 /**
  * Users
  */
+routes.get('/users/me', controllers.userController.me);
 routes.put('/users', controllers.userController.update);
+routes.get('/feed', controllers.userController.feed);
+
+/**
+ * Follows
+ */
+routes.post('/follow/:id', controllers.followController.create);
+routes.delete('/unfollow/:id', controllers.followController.destroy);
 
 /**
  * Tweets
